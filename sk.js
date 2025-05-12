@@ -258,6 +258,14 @@ function checkOffTrackCollision() {
     let c = get(px, py);
     let brightness = (c[0] + c[1] + c[2]) / 3;
 
+    console.log("Brightness at car position:", brightness); 
+    
+      if (brightness > 100) {
+        alert("Game Over: Off the Track!");
+        gameOver = true;
+        noLoop();
+      }
+    }
     if (brightness >200) {
       alert("Game Over: You hit the track boundary!");
       noLoop();
